@@ -1,0 +1,10 @@
+ifeq ($(DEBUG), 1)
+	ccflags-y += -DDEBUG
+endif
+
+obj-m += akb_pcr20x.o
+obj-m += stv6110a.o
+obj-m += mxl135rf.o
+
+stv6110a-y := stv6110x.o
+mxl135rf-y := mxl5007t.o
