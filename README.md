@@ -76,7 +76,7 @@ dvbv5-zap -a 0 -f 1 -c /usr/local/etc/dvbv5/dvbv5_channels_isdbt.conf -r -P -t 1
 ### BonDriver_LinuxDVB
 
 [BonDriver_LinuxDVB][link_bondvb] をコミット [0bdcccb][link_bondvb_commit] 以降に更新し、
-ini ファイルの各 `[Space.XXX]` セクションにて、以下の様に放送種別に応じたフロントエンド番号 (DvbFrontend) を設定して下さい。
+ini ファイルの各 `[Space.XXX]` セクションで、放送種別に応じたフロントエンド番号 (DvbFrontend) を設定して下さい。
 
 ```ini
 [Space.UHF]
@@ -123,7 +123,7 @@ dvbv5-zap を呼び出すスクリプト recakb.sh を etc ディレクトリに
 
 ### TS ドロップ対策
 
-以下の環境でテストしたところ Intel N100 のみ TS ドロップが頻発することを確認しています。
+以下の環境でテストしたところ Intel N100 で TS ドロップが頻発することを確認しています。
 
 * Intel Core i5-6500
 * Intel Celeron J4105
@@ -135,7 +135,7 @@ CPU の C-state 制御による省電力機能を抑止（深い C-state を無�
 sudo cpupower idle-set -D 10
 ```
 
-再起動後も永続化するには、例えば `/etc/systemd/system/cpupower-idle.service` を作成して起動時に実行するよう設定します。
+再起動後も永続化するには、`/etc/systemd/system/cpupower-idle.service` を作成し起動時に実行するよう設定します。
 
 ```ini
 [Unit]
